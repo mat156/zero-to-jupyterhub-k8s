@@ -21,10 +21,10 @@ development.
    git clone git@github.com:jupyterhub/zero-to-jupyterhub-k8s.git
    cd zero-to-jupyterhub-k8s
    ```
-5. Create a virtualenv & install the libraries required for builds to happen:
+5. Create a virtualenv & install the library required for builds to happen:
    ```bash
    python3 -m venv .
-   pip install -r dev-requirements.txt
+   pip install ruamel.yaml
    ```
  6. Now run `build.py` to build the requisite docker images inside minikube:
     ```bash
@@ -52,3 +52,17 @@ development.
 
 8. Make the changes you want. You need to re-run step 6 if you changed anything
    under `images`, but only step 7 if you changed things only under `jupyterhub`
+
+
+## Releasing a new version of the Helm Chart
+
+In order to release a new version of the Helm Chart, make sure to perform each
+of the following steps:
+
+1. ...
+2. **Generate a list of contributors since the latest release.** Use the script
+   in `tools/contributors.py` to list all contributions (anyone who made a
+   commit or a comment)    since the latest release. Update the dates in that
+   script, run it, and paste the output into the changelog. For an example,
+   see [the v0.5 list of contributors](https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/v0.5/CHANGELOG.md#contributors).
+3. ...
